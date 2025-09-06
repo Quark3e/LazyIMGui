@@ -31,8 +31,8 @@ bool GUINC::inRegion(ImVec2 cursorPos, ImVec2 cornerA, ImVec2 cornerB, bool incl
 GUINC::lazyimgui::lazyimgui(bool _init, size_t _width, size_t _height) {
     if(__init) throw std::runtime_error("ERROR: lazyimgui(bool) this library instance is already initialised.");
     
-    win_dim[0] = _width;
-    win_dim[1] = _height;
+    GUINC::win_dim[0] = _width;
+    GUINC::win_dim[1] = _height;
 
     if(_init) this->init();
 }

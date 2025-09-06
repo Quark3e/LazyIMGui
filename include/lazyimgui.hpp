@@ -2,8 +2,24 @@
 #ifndef HPP__LIB_lazyimgui
 #define HPP__LIB_lazyimgui
 
-#include "lazyimgui_includes.hpp"
-#include "pos2d.hpp"
+// #include "lazyimgui_includes.hpp"
+
+#include <allegro5/allegro.h>
+#include <allegro5/allegro_primitives.h>
+
+#include <imgui.h>
+#include <imgui_stdlib.h>
+#include <imgui_impl_allegro5.h>
+
+#include <iostream>
+
+#include "Pos2d.hpp"
+
+
+
+#define DEFAULT_WIN_WIDTH   1080
+#define DEFAULT_WIN_HEIGHT  810
+
 
 
 namespace GUINC {
@@ -21,12 +37,12 @@ namespace GUINC {
     bool inRegion(ImVec2 cursorPos, ImVec2 cornerA, ImVec2 cornerB, bool includeEdge=true);
 
     template<typename _VAR>
-    inline ImVec2 toImVec2(pos2d<_VAR> toConv) {
+    inline ImVec2 toImVec2(Pos2d<_VAR> toConv) {
         return ImVec2(float(toConv.x), float(toConv.y));
     }
 
-    inline pos2d<float> toPos2d(ImVec2 toConv) {
-        return pos2d<float>(toConv.x, toConv.y);
+    inline Pos2d<float> toPos2d(ImVec2 toConv) {
+        return Pos2d<float>(toConv.x, toConv.y);
     }
 
     inline ImVec2 win_dim{DEFAULT_WIN_WIDTH, DEFAULT_WIN_HEIGHT};
@@ -42,14 +58,14 @@ namespace GUINC {
         bool __running = false;
     public:
         // lazyimgui() = default;
-        lazyimguidowFlags winFlags_main = 
-            lazyimguidowFlags_NoMove |
-            lazyimguidowFlags_NoResize |
-            lazyimguidowFlags_NoCollapse |
-            lazyimguidowFlags_NoTitleBar | 
-            lazyimguidowFlags_NoBringToFrontOnFocus | 
-            lazyimguidowFlags_NoScrollbar |
-            lazyimguidowFlags_NoBackground
+        ImGuiWindowFlags winFlags_main = 
+            ImGuiWindowFlags_NoMove |
+            ImGuiWindowFlags_NoResize |
+            ImGuiWindowFlags_NoCollapse |
+            ImGuiWindowFlags_NoTitleBar | 
+            ImGuiWindowFlags_NoBringToFrontOnFocus | 
+            ImGuiWindowFlags_NoScrollbar |
+            ImGuiWindowFlags_NoBackground
         ;
     
         lazyimgui(bool _init=true, size_t _width=DEFAULT_WIN_WIDTH, size_t _height=DEFAULT_WIN_HEIGHT);
