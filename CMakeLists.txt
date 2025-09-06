@@ -130,5 +130,5 @@ export(EXPORT lazyimguiTargets
 )
 
 
-# library build :  cmake .. -DCMAKE_INSTALL_PREFIX="../install"; cmake --build . --config Release; cmake --install . --config Release --prefix ../install
+# library build :  cmake .. -DCMAKE_INSTALL_PREFIX="{library install dir}"; cmake --build . --config Release; cmake --install . --config Release --prefix {library install dir}
 # app build     :  cmake .. -DCMAKE_INSTALL_PREFIX="{library install dir}"; cmake --build . --config Release
