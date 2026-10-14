@@ -125,7 +125,7 @@ install(TARGETS lazyimgui
 
 # Install export file
 install(EXPORT lazyimguiTargets
-    FILE lazyimguiConfig.cmake
+    FILE lazyimguiTargets.cmake
     NAMESPACE lazyimgui::
     DESTINATION lib/cmake/lazyimgui
 )
