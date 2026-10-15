@@ -8,10 +8,12 @@
 #include "Pos2d.hpp"
 
 
-
+#ifndef DEFAULT_WIN_WIDTH
 #define DEFAULT_WIN_WIDTH   1080
+#endif
+#ifndef DEFAULT_WIN_HEIGHT
 #define DEFAULT_WIN_HEIGHT  810
-
+#endif
 
 
 namespace GUINC {

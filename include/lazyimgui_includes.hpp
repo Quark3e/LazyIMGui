@@ -13,11 +13,4 @@
 
 
 
-
-
-#define DEFAULT_WIN_WIDTH   1080
-#define DEFAULT_WIN_HEIGHT  810
-
-
-
 #endif // HPP__LIB_INCLUDES_lazyimgui
